@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palsu tapi Masyhur</title>
+    <link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+<header>
+	<br>
+    <h2>40 Kisah Palsu tetapi Masyhur</h2>
+	<h2>.: Kisah 2: Saidina Umar r.a. Membunuh Anak Perempuan Beliau :.</h2>
+</header>
+
+<main>
+<hr>
+	<center>
+        <label for="image-selector">Select Page:</label>
+        <select id="image-selector"></select>
+        <div class="navigation-buttons">
+            <button id="previous-button">➤</button>
+            <button id="next-button">➤</button>
+        </div>
+    </center>
+        
+    <div id="image-container">
+        <img id="selected-image">
+    </div>
+<br>
+</main>
+
+<a href="index.html" class="home">🏠</a>
+<a href='#' class="stt">↑</a>
+<a href='f01.html' class="kisahsebelum">Kisah<br>1</a>
+<a href='f03.html' class="kisahselepas">Kisah<br>3</a>
+
+</body>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+        const imageSelector = document.getElementById('image-selector');
+        const imageContainer = document.getElementById('selected-image');
+        const previousButton = document.getElementById('previous-button');
+        const nextButton = document.getElementById('next-button');
+
+        const startImageIndex = 40;
+        const endImageIndex = 44;
+        let currentImageIndex = startImageIndex;
+        
+        // Populate the dropdown with options
+        for (let i = startImageIndex; i <= endImageIndex; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = `Page ${i}`;
+            imageSelector.appendChild(option);
+        }
+
+        // Set the default selected value and display the first image by default
+        imageSelector.value = startImageIndex;
+        updateImage(startImageIndex);
+
+        // Event listener to display the selected image
+        imageSelector.addEventListener('change', function() {
+            const selectedValue = parseInt(this.value);
+            currentImageIndex = selectedValue;
+            updateImage(selectedValue);
+        });
+
+        // Event listener for the Previous button
+        previousButton.addEventListener('click', function() {
+            if (currentImageIndex > startImageIndex) {
+                currentImageIndex--;
+                updateImage(currentImageIndex);
+                imageSelector.value = currentImageIndex;
+            }
+        });
+
+        // Event listener for the Next button
+        nextButton.addEventListener('click', function() {
+            if (currentImageIndex < endImageIndex) {
+                currentImageIndex++;
+                updateImage(currentImageIndex);
+                imageSelector.value = currentImageIndex;
+            }
+        });
+
+        // Update the displayed image and button states
+        function updateImage(index) {
+            imageContainer.src = `https://github.com/bazliamin90/img/blob/main/kisahpalsu/b/${index}.jpg?raw=true`;
+            imageContainer.alt = `Image ${index}`;
+            updateButtons(index);
+        }
+
+        // Update the states of Previous and Next buttons
+        function updateButtons(index) {
+            previousButton.disabled = index <= startImageIndex;
+            nextButton.disabled = index >= endImageIndex;
+        }
+    });
+</script>
+
+</html>
