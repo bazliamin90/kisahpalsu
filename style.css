@@ -180,18 +180,14 @@ h6 {
     }
 	
 	header{
-		border-top: 0.05rem solid black;
-		border-right: 0.05rem solid black;
-		border-left: 0.05rem solid black;
-		box-shadow: none;
+		border: none;
+		box-shadow: 0.1rem 0.1rem lightgrey;
 		width: 95%;
 	}
 
 	main{
-		border-right: 0.05rem solid black;
-		border-left: 0.05rem solid black;
-		border-bottom: 0.05rem solid black;
-		box-shadow: none;
+		border: none;
+		box-shadow: 0.1rem 0.1rem lightgrey;
 		width: 95%;
 	}
 }
