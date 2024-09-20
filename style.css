@@ -18,14 +18,11 @@ html {
 }
 
 body {
-    font-family: monospace;
-    font-size: 0.9rem;
+    _font-family: monospace;
+    font-size: 1.1rem;
     margin: 0 0 4rem 0;
     padding: 0 0px;
-    _background: var(--bg);
     background-image: url("bg03.svg");
-	_background-attachment: fixed;
-	_background-repeat: repeat;
 	background-size: 100%;
 	color: var(--text);
     line-height: 1.6;
@@ -36,7 +33,7 @@ main,
 footer {
     margin: 0px auto;
     max-width: 50rem;
-    width: 85%;
+	width: 85%;
 	background: white;
 }
 
@@ -154,7 +151,7 @@ header h1 {
 
 header h2 {
     margin: 0;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     padding: 0.6rem 0 0.6rem 0;
     text-align: center;
 	opacity: 0.4;
@@ -181,6 +178,22 @@ h6 {
 		min-width: 360px;
 		font-size: 0.8rem;
     }
+	
+	header{
+		border-top: 0.05rem solid black;
+		border-right: 0.05rem solid black;
+		border-left: 0.05rem solid black;
+		box-shadow: none;
+		width: 95%;
+	}
+
+	main{
+		border-right: 0.05rem solid black;
+		border-left: 0.05rem solid black;
+		border-bottom: 0.05rem solid black;
+		box-shadow: none;
+		width: 95%;
+	}
 }
 
 /* Format the accordion */
@@ -433,8 +446,11 @@ td.dash {
 #image-selector{
 	border-bottom-right-radius: 0.4rem;
 	border-top-left-radius: 0.4rem;
+	border: 1px solid lightgrey;
 	padding: 0.4rem;
 	outline: none;
+	font-family: "Times New Roman", Times, serif;
+	
 }
 
 .kisahsebelum{
